@@ -1,0 +1,41 @@
+﻿@model QLBanHang.Models.PHONGBAN
+
+@{
+    ViewBag.Title = "Chi tiết phòng ban";
+    Layout = "~/Views/Shared/_LayoutVC.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content my-2">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong class="text-danger text-uppercase">THÔNG TIN CHI TIẾT NHÂN VIÊN</strong>
+                    </div>
+                    <div class="col-md-6 text-xxl-end">
+                        <a href="@Url.Action("Edit","PHONGBAN",new { id = Model.MaPB })" class="btn btn-sm btn-success"><i class="fa-solid fa-edit"></i>  SỬA</a>
+                        <a href="@Url.Action("Index","PHONGBAN")" class="btn btn-sm btn-info"><i class="fa-solid fa-backward"></i>  VỀ DANH SÁCH</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <dl class="dl-horizontal">
+                    <dt>
+Mã phòng ban                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MaPB)
+                    </dd>
+
+                    <dt>
+Tên phòng ban                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TenPB)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+</div>

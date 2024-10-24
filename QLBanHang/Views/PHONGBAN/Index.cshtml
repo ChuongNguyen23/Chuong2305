@@ -1,0 +1,59 @@
+﻿@model IEnumerable<QLBanHang.Models.PHONGBAN>
+@{
+    ViewBag.Title = "Danh mục phòng ban";
+    Layout = "~/Views/Shared/_LayoutVC.cshtml";
+}
+<div style="margin: auto;" class="content-wrapper">
+    <section class="content my-2">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong class="text-danger text-uppercase">DANH MỤC PHÒNG BAN</strong>
+                    </div>
+                    <div  style="text-align:right"  class="col-md-6 text-xxl-end">
+                        <a href="@Url.Action("Create","PHONGBAN")" class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i> THÊM</a>
+                        <a href="@Url.Action("Trash","PHONGBAN")" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> THÙNG RÁC</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Mã phòng ban
+                            </th>
+                            <th>
+                                Tên phòng ban
+                            </th>
+                            <th>
+                                Thao tác thực hiện
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaPB)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenPB)
+                                </td>
+                                
+
+                                <td>
+                                    <!-- <a href="@Url.Action("Details","PHONGBAN",new { id = item.MaPB })" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a> -->
+                                    <a href="@Url.Action("Edit","PHONGBAN",new { id = item.MaPB })" class="btn btn-sm btn-info"><i class="fa-solid fa-edit"></i>Sửa</a>
+                                    <a href="@Url.Action("Delete","PHONGBAN",new { id = item.MaPB })" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i>Xóa</a>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </section>
+</div>

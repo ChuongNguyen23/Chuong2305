@@ -1,0 +1,72 @@
+﻿@model IEnumerable<QLBanHang.Models.CHITIETDONBAN>
+@{
+    ViewBag.Title = "Danh mục chi tiết hóa đơn bán";
+    Layout = "~/Views/Shared/_LayoutVC.cshtml";
+}
+<div class="content-wrapper">
+    <section class="content my-2">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong class="text-danger text-uppercase">DANH MỤC CHI TIẾT HÓA ĐƠN BÁN</strong>
+                    </div>
+                    <div style="text-align:right" class="col-md-6 text-xxl-end">
+                        <a href="@Url.Action("Create","CHITIETDONBAN")" class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i> THÊM</a>
+                        <a href="@Url.Action("Trash","CHITIETDONBAN")" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> THÙNG RÁC</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Mã đơn bán
+                            </th>
+                            <th>
+                                Mã sản phẩm
+                            </th>
+                            <th>
+                                Giá bán
+                            </th>
+                            <th>
+                                Số lượng
+                            </th>
+                            <th>
+                                Tên sản phẩm
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaDonBan)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaSP)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GiaBan)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SoLuong)
+                                </td>
+                                <td>
+                                    @*@Html.DisplayFor(modelItem => item.TenSP)*@
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Edit","CHITIETDONBAN",new { id = item.MaSP })" class="btn btn-sm btn-info"><i class="fa-solid fa-edit"></i>Sửa</a>
+                                    <a href="@Url.Action("Delete","CHITIETDONBAN",new { id = item.MaSP })" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i>Xóa</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </section>
+</div>

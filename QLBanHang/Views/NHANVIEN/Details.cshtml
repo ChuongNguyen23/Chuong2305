@@ -1,0 +1,83 @@
+﻿@model QLBanHang.Models.NHANVIEN
+
+@{
+    ViewBag.Title = "Chi tiết nhân viên";
+    Layout = "~/Views/Shared/_LayoutVC.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content my-2">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong class="text-danger text-uppercase">THÔNG TIN CHI TIẾT NHÂN VIÊN</strong>
+                    </div>
+                    <div class="col-md-6 text-xxl-end">
+                        <a href="@Url.Action("Edit","NHANVIEN",new { id = Model.MaNV })" class="btn btn-sm btn-success"><i class="fa-solid fa-edit"></i>  SỬA</a>
+                        <a href="@Url.Action("Index","NHANVIEN")" class="btn btn-sm btn-info"><i class="fa-solid fa-backward"></i>  VỀ DANH SÁCH</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <dl class="dl-horizontal">
+                    <dt>
+Mã nhân viên                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MaNV)
+                    </dd>
+
+                    <dt>
+Mã phòng ban                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MaPB)
+                    </dd>
+
+                    <dt>
+Mã chức vụ                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MaCV)
+                    </dd>
+
+                    <dt>
+Tên nhân viên                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TenNV)
+                    </dd>
+
+                    <dt>
+Ngày sinh                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NgaySinh)
+                    </dd>
+
+                    <dt>
+Giới tính                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.GioiTinh)
+                    </dd>
+
+                    <dt>
+Địa Chỉ                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DiaChi)
+                    </dd>
+
+                    <dt>
+Số điện thoại                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SDT)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3615ff3098f14f2691cc7cefcc8342d7" Name="Diagram1" ZoomLevel="48">
+        <EntityTypeShape EntityType="QLBanHangModel.CHITIETDONBAN" Width="2.875" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.CHITIETDONNHAP" Width="3.125" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.CHITIETKM" Width="1.75" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.CHITIETTHUNO" Width="1.5" PointX="8.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.CHITIETTRANO" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.CHUCVU" Width="1.5" PointX="1.5" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.DONBANHANG" Width="1.5" PointX="3" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.DONHANGNHAP" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.HANGKHUYENMAI" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.KHOHANG" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.NCC" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.NHANVIEN" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.NHOMHANG" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.PHIEUBAOHANH" Width="1.5" PointX="3" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.PHONGBAN" Width="1.5" PointX="1.5" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.SANPHAM" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.SOTHUNO" Width="1.5" PointX="6" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.SOTRANO" Width="1.5" PointX="3" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangModel.sysdiagram" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="QLBanHangModel.FK_CHITIETDONBAN_MaDonBan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_CHITIETDONBAN_MaSP" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_CHITIETDONHANG_MaDonNhap" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_CHITIETDONHANG_MaSP" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_CHITIETKM_MaKM" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_CHITIETKM_MaSP" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_CHITIETTHUNO_MaDonBan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_CHITIETTHUNO_MaSoThu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_CHITIETTRANO_MaDonNhap" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_CHITIETTRANO_MaTraNo" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_NHANVIEN_MaCV" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_DONBANHANG_MaKH" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_DONBANHANG_MaNV" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_DONHANGNHAP_MaNCC" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_DONHANGNHAP_MaNV" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_BAOHANH_MaKH" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_SOTHUNO_MaKH" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_SANPHAM_MaKho" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_SOTHNO_MaNCC" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_SOTRANO_MaNCC" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_NHANVIEN_MaPB" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHangModel.FK_SANPHAM_MaNH" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QLBanHangModel.CHITIETDATHANG" Width="2.875" PointX="8.5" PointY="13.75" />
+        <EntityTypeShape EntityType="QLBanHangModel.DATHANG" Width="2.125" PointX="5.25" PointY="22.25" />
+        <EntityTypeShape EntityType="QLBanHangModel.GIAODICH" Width="1.5" PointX="5.25" PointY="11.375" />
+        <AssociationConnector Association="QLBanHangModel.FK_CHITIETDATHANG_SANPHAM" />
+        <AssociationConnector Association="QLBanHangModel.FK_CHITIETDATHANG1_DATHANG" />
+        <AssociationConnector Association="QLBanHangModel.FK_DATHANG_DONBANHANG" />
+        <AssociationConnector Association="QLBanHangModel.FK_DATHANG_KHACHHANG" />
+        <AssociationConnector Association="QLBanHangModel.FK_GIAODICH_SANPHAM" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

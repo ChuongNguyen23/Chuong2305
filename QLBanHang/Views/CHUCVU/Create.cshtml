@@ -1,0 +1,54 @@
+﻿@model QLBanHang.Models.CHUCVU
+
+@{
+    ViewBag.Title = "Thêm mới chức vụ";
+    Layout = "~/Views/Shared/_LayoutVC.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <head>
+        <style>
+        </style>
+    </head>
+    <div class="content-wrapper">
+        <section class="content my-2">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong class="text-danger text-uppercase">THÊM MỚI CHỨC VỤ</strong>
+                        </div>
+                        <div style="text-align:right" class="col-md-6 text-xxl-end">
+                            <button class="btn btn-sm btn-success" type="submit" name="create"><i class="fa-solid fa-floppy-disk"></i>  LƯU</button>
+                            <a href="@Url.Action("Index","CHUCVU")" class="btn btn-sm btn-info"><i class="fa-solid fa-backward"></i>  VỀ DANH SÁCH</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <a><strong>Mã chức vụ</strong></a>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.MaCV, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MaCV, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <a><strong>Tên chức vụ</strong></a>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.TenCV, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TenCV, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}

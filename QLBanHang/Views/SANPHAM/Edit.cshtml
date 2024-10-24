@@ -1,0 +1,114 @@
+﻿@model QLBanHang.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Chỉnh sửa thông tin";
+    Layout = "~/Views/Shared/_LayoutVC.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="content-wrapper">
+        <section class="content my-2">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong class="text-danger text-uppercase">CHỈNH SỬA THÔNG TIN SẢN PHẨM</strong>
+                        </div>
+                        <div style="text-align:right" class="col-md-6 text-xxl-end">
+                            <button class="btn btn-sm btn-success" type="submit" name="create"><i class="fa-solid fa-floppy-disk"></i>  LƯU</button>
+                            <a href="@Url.Action("Index","SANPHAM")" class="btn btn-sm btn-info"><i class="fa-solid fa-backward"></i>  VỀ DANH SÁCH</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <a><strong>Mã sản phẩm</strong></a>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.MaSP, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.MaSP, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <a><strong>Mã nhóm hàng</strong></a>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.MaNH, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.MaNH, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <a><strong>Mã kho</strong></a>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.MaKho, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.MaKho, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <a><strong>Tên sản phẩm</strong></a>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <a><strong>CPU</strong></a>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CPU, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CPU, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <a><strong>RAM</strong></a>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.RAM, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.RAM, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <a><strong>Dung lượng</strong></a>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.DungLuong, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.DungLuong, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <a><strong>Kích thước</strong></a>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.KichThuoc, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.KichThuoc, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <a><strong>Nhà sản xuất</strong></a>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.NhaSX, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NhaSX, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <a><strong>Nước sản xuất</strong></a>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.NuocSX, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NuocSX, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <a><strong>Giá bán</strong></a>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.GiaBan, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.GiaBan, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}

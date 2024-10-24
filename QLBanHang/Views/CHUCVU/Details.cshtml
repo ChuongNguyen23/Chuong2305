@@ -1,0 +1,43 @@
+﻿@model QLBanHang.Models.CHUCVU
+
+@{
+    ViewBag.Title = "Chi tiết chức vụ";
+    Layout = "~/Views/Shared/_LayoutVC.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content my-2">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong class="text-danger text-uppercase">THÔNG TIN CHI TIẾT CHỨC VỤ</strong>
+                    </div>
+                    <div style="text-align:right" class="col-md-6 text-xxl-end">
+                        <a href="@Url.Action("Edit","CHUCVU",new { id = Model.MaCV })" class="btn btn-sm btn-success"><i class="fa-solid fa-edit"></i>  SỬA</a>
+                        <a href="@Url.Action("Index","CHUCVU")" class="btn btn-sm btn-info"><i class="fa-solid fa-backward"></i>  VỀ DANH SÁCH</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <dl class="dl-horizontal">
+                    <dt>
+                        Mã chức vụ
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MaCV)
+                    </dd>
+
+                    <dt>
+                        Tên chức vụ
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TenCV)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+</div>

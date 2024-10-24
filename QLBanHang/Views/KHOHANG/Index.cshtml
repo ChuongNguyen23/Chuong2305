@@ -1,0 +1,64 @@
+﻿@model IEnumerable<QLBanHang.Models.KHOHANG>
+@{
+    ViewBag.Title = "Danh mục kho hàng";
+    Layout = "~/Views/Shared/_LayoutVC.cshtml";
+}
+<div class="content-wrapper">
+    <section class="content my-2">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong class="text-danger text-uppercase">DANH MỤC KHO HÀNG</strong>
+                    </div>
+                    <div style="text-align:right" class="col-md-6 text-xxl-end">
+                        <a href="@Url.Action("Create","KHOHANG")" class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i> THÊM</a>
+                        <a href="@Url.Action("Trash","KHOHANG")" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> THÙNG RÁC</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Mã kho hàng
+                            </th>
+                            <th>
+                                Tên kho hàng
+                            </th>
+                            <th>
+                                Dịa chỉ
+                            </th>
+                            <th>
+                                Thao tác thực hiện
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaKho)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenKho)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DiaChi)
+                                </td>
+
+
+                                <td>
+                                    <a href="@Url.Action("Edit","KHOHANG",new { id = item.MaKho })" class="btn btn-sm btn-info"><i class="fa-solid fa-edit"></i>Sửa</a>
+                                    <a href="@Url.Action("Delete","KHOHANG",new { id = item.MaKho })" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i>Xóa</a>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,139 @@
+﻿@model PagedList.IPagedList<QLBanHang.Models.SANPHAM>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Danh mục sản phẩm";
+    Layout = "~/Views/Shared/_LayoutVC.cshtml";
+}
+<body>
+    <div class="container">
+        <div id="content">
+            <div class="content-wrapper">
+                <section class="content my-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong class="text-danger text-uppercase">DANH MỤC SẢN PHẨM</strong>
+                                </div>
+                                <div style="text-align:right" class="col-md-6 text-xxl-end">
+                                    <a href="@Url.Action("Create","SANPHAM")" class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i> THÊM</a>
+                                    <a href="@Url.Action("Trash","SANPHAM")" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> THÙNG RÁC</a>
+                                    <a class="btn btn-sm btn-danger" id="btn-one"><i class="fa-solid fa-file-pdf"></i> XUẤT FILE PDF</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Mã sản phẩm
+                                        </th>
+                                        <th>
+                                            Mã nhóm hàng
+                                        </th>
+                                        <th>
+                                            Mã kho
+                                        </th>
+                                        <th>
+                                            Tên sản phẩm
+                                        </th>
+                                        <th>
+                                            CPU
+                                        </th>
+                                        <th>
+                                            RAM
+                                        </th>
+                                        <th>
+                                            Dung lượng
+                                        </th>
+                                        <th>
+                                            Kích thước
+                                        </th>
+                                        <th>
+                                            Nhà sản xuất
+                                        </th>
+                                        <th>
+                                            Nước sản xuất
+                                        </th>
+                                        <th>
+                                            Giá bán
+                                        </th>
+                                        <th>
+                                            Thao tác thực hiện
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.MaSP)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.MaNH)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.MaKho)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TenSP)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CPU)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.RAM)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.DungLuong)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.KichThuoc)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NhaSX)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NuocSX)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.GiaBan)
+                                            </td>
+
+                                            <td>
+                                                <a href="@Url.Action("Edit","SANPHAM",new { id = item.MaSP })" class="btn btn-sm btn-info"><i class="fa-solid fa-edit"></i>Sửa</a>
+                                                <a href="@Url.Action("Delete","SANPHAM",new { id = item.MaSP })" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i>Xóa</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <iframe id="frame"
+                    style="width: 100%; border: 0; height: 0"
+                    src="receipt.html"></iframe>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+            integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
+</body>
+<div class="pagination-wrapper">
+    <div class="pagination">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions { DisplayLinkToFirstPage = PagedListDisplayMode.IfNeeded, DisplayLinkToLastPage = PagedListDisplayMode.IfNeeded, Display = PagedListDisplayMode.IfNeeded, MaximumPageNumbersToDisplay = 5 })
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<QLBanHang.Models.CHUCVU>
+@{
+    ViewBag.Title = "Danh mục chức vụ";
+    Layout = "~/Views/Shared/_LayoutVC.cshtml";
+}
+<div class="content-wrapper">
+    <section class="content my-2">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong class="text-danger text-uppercase">DANH MỤC CHỨC VỤ</strong>
+                    </div>
+                    <div  style="text-align:right"  class="col-md-6 text-xxl-end">
+                        <a href="@Url.Action("Create","CHUCVU")" class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i> THÊM</a>
+                        <a href="@Url.Action("Trash","CHUCVU")" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> THÙNG RÁC</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Mã chức vụ
+                            </th>
+                            <th>
+                                Tên chức vụ
+                            </th>
+                            <th>
+                                Thao tác thực hiện
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaCV)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenCV)
+                                </td>
+
+
+                                <td>
+                                    <!-- <a href="@Url.Action("Details","CHUCVU",new { id = item.MaCV })" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a> -->
+                                    <a href="@Url.Action("Edit","CHUCVU",new { id = item.MaCV })" class="btn btn-sm btn-info"><i class="fa-solid fa-edit"></i>Sửa</a>
+                                    <a href="@Url.Action("Delete","CHUCVU",new { id = item.MaCV })" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i>Xóa</a>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
